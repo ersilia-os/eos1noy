@@ -2,8 +2,8 @@
 import os
 import csv
 import sys
-from rdkit import Chem
-from rdkit.Chem.Descriptors import MolWt
+from sampler import ChemblSampler
+
 
 # parse arguments
 input_file = sys.argv[1]
@@ -11,10 +11,6 @@ output_file = sys.argv[2]
 
 # current file directory
 root = os.path.dirname(os.path.abspath(__file__))
-
-# my model
-def my_model(smiles_list):
-    return [MolWt(Chem.MolFromSmiles(smi)) for smi in smiles_list]
 
 
 # read SMILES from .csv file, assuming one column with header
@@ -24,16 +20,15 @@ with open(input_file, "r") as f:
     smiles_list = [r[0] for r in reader]
 
 # run model
-outputs = my_model(smiles_list)
-
-#check input and output have the same lenght
-input_len = len(smiles_list)
-output_len = len(outputs)
-assert input_len == output_len
+sampler = ChemblSampler()
+outputs = []
+for smi in smiles_list:
+    o = sampler.sample(smi)
+    outputs += [o]
 
 # write output in a .csv file
 with open(output_file, "w") as f:
     writer = csv.writer(f)
-    writer.writerow(["value"])  # header
+    writer.writerow([f"smi_{i}" for i in range(100)])  # header
     for o in outputs:
-        writer.writerow([o])
+        writer.writerow(o)
