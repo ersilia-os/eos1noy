@@ -75,7 +75,6 @@ class ChemblSampler(object):
             sorted_smiles += [Chem.MolToSmiles(m)]
         return sorted_smiles
 
-
     def sample(self, origin_smiles):
         sampled_smiles = []
         sampled_smiles += self._sample(origin_smiles)
