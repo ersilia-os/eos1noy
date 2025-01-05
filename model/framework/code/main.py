@@ -29,6 +29,6 @@ for smi in smiles_list:
 # write output in a .csv file
 with open(output_file, "w") as f:
     writer = csv.writer(f)
-    writer.writerow([f"smi_{i}" for i in range(100)])  # header
+    writer.writerow(["smiles_{0}".format(str(i).zfill(2)) for i in range(100)])  # header
     for o in outputs:
         writer.writerow(o)
