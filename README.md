@@ -2,44 +2,87 @@
 
 A simple sampler of the ChEMBL database using their API. It looks for similar molecules to the input molecule and returns a list of 100 molecules by default. This model has been developed by Ersilia. It posts queries to an online server.
 
-## Identifiers
+This model was incorporated on 2023-09-04.
 
-* EOS model ID: `eos1noy`
-* Slug: `chembl-sampler`
+## Information
+### Identifiers
+- **Ersilia Identifier:** `eos1noy`
+- **Slug:** `chembl-sampler`
 
-## Characteristics
+### Domain
+- **Task:** `Sampling`
+- **Subtask:** `Similarity search`
+- **Biomedical Area:** `Any`
+- **Target Organism:** `Not Applicable`
+- **Tags:** `Similarity`
 
-* Input: `Compound`
-* Input Shape: `Single`
-* Task: `Similarity`
-* Output: `Compound`
-* Output Type: `String`
-* Output Shape: `List`
-* Interpretation: 100 nearest molecules in ChEMBL
+### Input
+- **Input:** `Compound`
+- **Input Dimension:** `1`
 
-## References
+### Output
+- **Output Dimension:** `100`
+- **Output Consistency:** `Fixed`
+- **Interpretation:** 100 nearest molecules in ChEMBL
 
-* [Publication](https://academic.oup.com/nar/article/40/D1/D1100/2903401)
-* [Source Code](https://github.com/ersilia-os/chem-sampler/blob/main/chemsampler/samplers/chembl/sampler.py)
-* Ersilia contributor: [GemmaTuron](https://github.com/GemmaTuron)
+Below are the **Output Columns** of the model:
+| Name | Type | Direction | Description |
+|------|------|-----------|-------------|
+| smiles_00 | string |  | Compound index 0 queried with the ChEMBL API |
+| smiles_01 | string |  | Compound index 1 queried with the ChEMBL API |
+| smiles_02 | string |  | Compound index 2 queried with the ChEMBL API |
+| smiles_03 | string |  | Compound index 3 queried with the ChEMBL API |
+| smiles_04 | string |  | Compound index 4 queried with the ChEMBL API |
+| smiles_05 | string |  | Compound index 5 queried with the ChEMBL API |
+| smiles_06 | string |  | Compound index 6 queried with the ChEMBL API |
+| smiles_07 | string |  | Compound index 7 queried with the ChEMBL API |
+| smiles_08 | string |  | Compound index 8 queried with the ChEMBL API |
+| smiles_09 | string |  | Compound index 9 queried with the ChEMBL API |
 
-## Ersilia model URLs
-* [GitHub](https://github.com/ersilia-os/eos1noy)
-* [AWS S3](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1noy.zip)
-* [DockerHub](https://hub.docker.com/r/ersiliaos/eos1noy) (AMD64, ARM64)
+_10 of 100 columns are shown_
+### Source and Deployment
+- **Source:** `Online`
+- **Source Type:** `External`
+- **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos1noy](https://hub.docker.com/r/ersiliaos/eos1noy)
+- **Docker Architecture:** `AMD64`, `ARM64`
+- **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1noy.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1noy.zip)
 
-## Citation
+### Resource Consumption
 
-If you use this model, please cite the [original authors](https://academic.oup.com/nar/article/40/D1/D1100/2903401) of the model and the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff).
 
-## License
+### References
+- **Source Code**: [https://github.com/ersilia-os/chem-sampler/blob/main/chemsampler/samplers/chembl/sampler.py](https://github.com/ersilia-os/chem-sampler/blob/main/chemsampler/samplers/chembl/sampler.py)
+- **Publication**: [https://academic.oup.com/nar/article/40/D1/D1100/2903401](https://academic.oup.com/nar/article/40/D1/D1100/2903401)
+- **Publication Type:** `Peer reviewed`
+- **Publication Year:** `2012`
+- **Ersilia Contributor:** [GemmaTuron](https://github.com/GemmaTuron)
 
-This package is licensed under a GPL-3.0 license. The model contained within this package is licensed under a GPL-3.0 license.
+### License
+This package is licensed under a [GPL-3.0](https://github.com/ersilia-os/ersilia/blob/master/LICENSE) license. The model contained within this package is licensed under a [GPL-3.0-only](LICENSE) license.
 
-Notice: Ersilia grants access to these models 'as is' provided by the original authors, please refer to the original code repository and/or publication if you use the model in your research.
+**Notice**: Ersilia grants access to models _as is_, directly from the original authors, please refer to the original code repository and/or publication if you use the model in your research.
 
-## About Us
 
-The [Ersilia Open Source Initiative](https://ersilia.io) is a Non Profit Organization ([1192266](https://register-of-charities.charitycommission.gov.uk/charity-search/-/charity-details/5170657/full-print)) with the mission is to equip labs, universities and clinics in LMIC with AI/ML tools for infectious disease research.
+## Use
+To use this model locally, you need to have the [Ersilia CLI](https://github.com/ersilia-os/ersilia) installed.
+The model can be **fetched** using the following command:
+```bash
+# fetch model from the Ersilia Model Hub
+ersilia fetch eos1noy
+```
+Then, you can **serve**, **run** and **close** the model as follows:
+```bash
+# serve the model
+ersilia serve eos1noy
+# generate an example file
+ersilia example -n 3 -f my_input.csv
+# run the model
+ersilia run -i my_input.csv -o my_output.csv
+# close the model
+ersilia close
+```
 
-[Help us](https://www.ersilia.io/donate) achieve our mission!
+## About Ersilia
+The [Ersilia Open Source Initiative](https://ersilia.io) is a tech non-profit organization fueling sustainable research in the Global South.
+Please [cite](https://github.com/ersilia-os/ersilia/blob/master/CITATION.cff) the Ersilia Model Hub if you've found this model to be useful. Always [let us know](https://github.com/ersilia-os/ersilia/issues) if you experience any issues while trying to run it.
+If you want to contribute to our mission, consider [donating](https://www.ersilia.io/donate) to Ersilia!
