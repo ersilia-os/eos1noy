@@ -3,21 +3,18 @@
     "Slug": "chembl-sampler",
     "Status": "Ready",
     "Title": "ChEMBL Molecular Sampler",
-    "Description": "A simple sampler of the ChEMBL database using their API. It looks for similar molecules to the input molecule and returns a list of 100 molecules (maximum) having Tanimoto Similarity > 0.4. This model has been developed by Ersilia. It posts queries to an online server.\n",
+    "Description": "A simple sampler of the ChEMBL database using their API. It looks for similar molecules to the input molecule and returns a list of 100 molecules (maximum) having Tanimoto Similarity > 0.4. This model has been developed by Ersilia. It posts queries to an online server.",
+    "Deployment": [
+        "Local"
+    ],
     "Source": "Online",
     "Source Type": "External",
+    "Task": "Sampling",
+    "Subtask": "Similarity search",
     "Input": [
         "Compound"
     ],
     "Input Dimension": 1,
-    "Task": "Sampling",
-    "Subtask": "Similarity search",
-    "Biomedical Area": [
-        "Any"
-    ],
-    "Target Organism": [
-        "Not Applicable"
-    ],
     "Output": [
         "Compound"
     ],
@@ -27,20 +24,23 @@
     "Tag": [
         "Similarity"
     ],
-    "Publication": "https://academic.oup.com/nar/article/40/D1/D1100/2903401",
+    "Biomedical Area": [
+        "Any"
+    ],
+    "Target Organism": [
+        "Not Applicable"
+    ],
     "Publication Type": "Peer reviewed",
     "Publication Year": 2012,
+    "Publication": "https://academic.oup.com/nar/article/40/D1/D1100/2903401",
     "Source Code": "https://github.com/ersilia-os/chem-sampler/blob/main/chemsampler/samplers/chembl/sampler.py",
     "License": "GPL-3.0-only",
     "Contributor": "GemmaTuron",
     "Incorporation Date": "2023-09-04",
+    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1noy.zip",
     "DockerHub": "https://hub.docker.com/r/ersiliaos/eos1noy",
     "Docker Architecture": [
         "AMD64",
         "ARM64"
-    ],
-    "S3": "https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1noy.zip",
-    "Deployment": [
-        "Local"
     ]
 }
