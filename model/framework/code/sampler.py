@@ -19,7 +19,6 @@ def sort_molecules_by_similarity(ref_mol, mol_list):
     similarities = calculate_similarity(ref_mol, mol_list)
     paired = list(zip(mol_list, similarities))
     paired.sort(key=lambda x: (-x[1], Chem.MolToSmiles(x[0], canonical=True)))
-    print(paired)
     sorted_mols = [mol for mol, sim in paired]
     return sorted_mols
 
