@@ -4,6 +4,7 @@ A simple sampler of the ChEMBL database using their API. It looks for similar mo
 
 This model was incorporated on 2023-09-04.
 
+
 ## Information
 ### Identifiers
 - **Ersilia Identifier:** `eos1noy`
@@ -13,7 +14,7 @@ This model was incorporated on 2023-09-04.
 - **Task:** `Sampling`
 - **Subtask:** `Similarity search`
 - **Biomedical Area:** `Any`
-- **Target Organism:** `Not Applicable`
+- **Target Organism:** `Any`
 - **Tags:** `Similarity`
 
 ### Input
