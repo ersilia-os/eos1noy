@@ -1,7 +1,7 @@
 {
     "Identifier": "eos1noy",
     "Slug": "chembl-sampler",
-    "Status": "In maintenance",
+    "Status": "Ready",
     "Title": "ChEMBL Molecular Sampler",
     "Description": "A simple sampler of the ChEMBL database using their API. It looks for similar molecules to the input molecule and returns a list of 100 molecules (maximum) having Tanimoto Similarity > 0.4. This model has been developed by Ersilia. It posts queries to an online server.",
     "Deployment": [
