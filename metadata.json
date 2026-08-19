@@ -3,7 +3,7 @@
     "Slug": "chembl-sampler",
     "Status": "Ready",
     "Title": "ChEMBL Molecular Sampler",
-    "Description": "A simple sampler of the ChEMBL database using their API. It looks for similar molecules to the input molecule and returns a list of 100 molecules (maximum) having Tanimoto Similarity > 0.4. This model has been developed by Ersilia. It posts queries to an online server.",
+    "Description": "Fetches 100 compounds from ChEMBL resembling a query structure, using the similarity endpoint of the ChEMBL web services rather than a local index. ChEMBL, curated at the European Bioinformatics Institute, gathers bioactivity measurements abstracted from the medicinal chemistry literature and remains the standard public reference for compound-target data. Because the search runs remotely, results track the live database and require network access. Retrieved neighbours are structurally similar but not necessarily active on the same targets.",
     "Deployment": [
         "Local"
     ],
@@ -20,7 +20,7 @@
     ],
     "Output Dimension": 100,
     "Output Consistency": "Fixed",
-    "Interpretation": "100 nearest molecules in ChEMBL",
+    "Interpretation": "List of 100 compounds from ChEMBL structurally similar to the query molecule.",
     "Tag": [
         "Similarity"
     ],
@@ -33,7 +33,7 @@
     "Publication Type": "Peer reviewed",
     "Publication Year": 2012,
     "Publication": "https://doi.org/10.1093/nar/gkr777",
-    "Source Code": "https://github.com/ersilia-os/chem-sampler/blob/main/chemsampler/samplers/chembl/sampler.py",
+    "Source Code": "https://github.com/ersilia-os/chem-sampler",
     "License": "GPL-3.0-only",
     "Contributor": "GemmaTuron",
     "Incorporation Date": "2023-09-04",
