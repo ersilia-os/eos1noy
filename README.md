@@ -2,7 +2,7 @@
 
 A simple sampler of the ChEMBL database using their API. It looks for similar molecules to the input molecule and returns a list of 100 molecules (maximum) having Tanimoto Similarity > 0.4. This model has been developed by Ersilia. It posts queries to an online server.
 
-This model was incorporated on 2023-09-04.Last packaged on 2025-10-22.
+This model was incorporated on 2023-09-04.Last packaged on 2026-08-31.
 
 ## Information
 ### Identifiers
@@ -50,11 +50,11 @@ _10 of 100 columns are shown_
 ### Resource Consumption
 - **Model Size (Mb):** `1`
 - **Environment Size (Mb):** `445`
-- **Image Size (Mb):** `482.83`
+- **Image Size (Mb):** `508.48`
 
 **Computational Performance (seconds):**
-- 10 inputs: `29.11`
-- 100 inputs: `315.75`
+- 10 inputs: `33.99`
+- 100 inputs: `166.72`
 - 10000 inputs: `-1`
 
 ### References
