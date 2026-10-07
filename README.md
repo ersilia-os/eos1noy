@@ -1,6 +1,6 @@
 # ChEMBL Molecular Sampler
 
-Fetches 100 compounds from ChEMBL resembling a query structure, using the similarity endpoint of the ChEMBL web services rather than a local index. ChEMBL, curated at the European Bioinformatics Institute, gathers bioactivity measurements abstracted from the medicinal chemistry literature and remains the standard public reference for compound-target data. Because the search runs remotely, results track the live database and require network access. Retrieved neighbours are structurally similar but not necessarily active on the same targets.
+Fetches compounds resembling a query structure from ChEMBL, calling the similarity endpoint of its web services rather than searching a local index. Everything above 40 per cent Tanimoto similarity is retrieved, standardised, re-ranked by Morgan fingerprint similarity and trimmed to the closest hundred, so unusual chemotypes return fewer neighbours. ChEMBL curates bioactivity abstracted from the medicinal chemistry literature, and the remote search follows the live database and needs network access. Neighbours are structurally similar, not necessarily active on the same targets.
 
 This model was incorporated on 2023-09-04.Last packaged on 2026-08-31.
 
@@ -23,7 +23,7 @@ This model was incorporated on 2023-09-04.Last packaged on 2026-08-31.
 ### Output
 - **Output Dimension:** `100`
 - **Output Consistency:** `Fixed`
-- **Interpretation:** List of 100 compounds from ChEMBL structurally similar to the query molecule.
+- **Interpretation:** Up to 100 ChEMBL compounds above 40 per cent Tanimoto similarity to the query molecule.
 
 Below are the **Output Columns** of the model:
 | Name | Type | Direction | Description |
