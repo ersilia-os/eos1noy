@@ -2,7 +2,8 @@
 
 Fetches compounds resembling a query structure from ChEMBL, calling the similarity endpoint of its web services rather than searching a local index. Everything above 40 per cent Tanimoto similarity is retrieved, standardised, re-ranked by Morgan fingerprint similarity and trimmed to the closest hundred, so unusual chemotypes return fewer neighbours. ChEMBL curates bioactivity abstracted from the medicinal chemistry literature, and the remote search follows the live database and needs network access. Neighbours are structurally similar, not necessarily active on the same targets.
 
-This model was incorporated on 2023-09-04.Last packaged on 2026-08-31.
+This model was incorporated on 2023-09-04.
+Last packaged on 2026-08-31.
 
 ## Information
 ### Identifiers
@@ -46,6 +47,7 @@ _10 of 100 columns are shown_
 - **DockerHub**: [https://hub.docker.com/r/ersiliaos/eos1noy](https://hub.docker.com/r/ersiliaos/eos1noy)
 - **Docker Architecture:** `AMD64`, `ARM64`
 - **S3 Storage**: [https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1noy.zip](https://ersilia-models-zipped.s3.eu-central-1.amazonaws.com/eos1noy.zip)
+- **Apptainer**: [https://models-sif.s3.eu-north-1.amazonaws.com/eos1noy_v2.sif](https://models-sif.s3.eu-north-1.amazonaws.com/eos1noy_v2.sif)
 
 ### Resource Consumption
 - **Model Size (Mb):** `1`
